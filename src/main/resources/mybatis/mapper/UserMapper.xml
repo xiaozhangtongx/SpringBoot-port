@@ -8,4 +8,19 @@
         SELECT * FROM easyuser WHERE username=#{username} AND PASSWORD=#{password} AND state=1
     </select>
 
+    <select id="getAllUser" resultType="User">
+       	SELECT * FROM easyUser
+        <if test="username !=null ">
+            WHERE username like #{username}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+
+    <select id="getUserCounts" resultType="Integer">
+       	SELECT count(*) FROM easyuser
+        <if test="username !=null ">
+            WHERE username like #{username}
+        </if>
+    </select>
+
 </mapper>

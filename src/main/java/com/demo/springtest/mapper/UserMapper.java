@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author zhang
  * @version 1.0
@@ -15,5 +17,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Mapper
 public interface UserMapper {
-    public User getUserByMessage(String username,String password);
+    public User getUserByMessage(String username, String password);
+
+    public List<User> getAllUser(String username, int pageStart, int pageSize);
+
+    public int getUserCounts(String username);
+
 }
