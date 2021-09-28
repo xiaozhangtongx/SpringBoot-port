@@ -23,4 +23,13 @@ public interface UserMapper {
 
     public int getUserCounts(String username);
 
+    public int updateState(int id, Boolean state);
+
+    public int addUser(User user);
+
+    public User getUpdateUser(int id);
+
+    public int editUser(User user);
+
+    public int deleteUser(int id);
 }

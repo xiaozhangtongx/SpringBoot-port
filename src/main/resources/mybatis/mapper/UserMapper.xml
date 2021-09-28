@@ -23,4 +23,27 @@
         </if>
     </select>
 
+    <select id="getUpdateUser" resultType="User">
+        SELECT * FROM easyuser WHERE id = #{id}
+    </select>
+
+     <update id="updateState">
+         UPDATE easyuser SET state = #{state} WHERE id = #{id}
+     </update>
+
+     <insert id="addUser">
+         INSERT INTO easyuser
+         (username,password,email,role,state)
+         VALUE
+         (#{username},#{password},#{email},#{role},#{state})
+     </insert>
+
+         <update id="editUser">
+             UPDATE easyuser SET username = #{username} , password = #{password} ,
+             email = #{email} WHERE id = #{id}
+         </update>
+
+         <delete id="deleteUser">
+             DELETE FROM easyuser WHERE id = #{id}
+         </delete>
 </mapper>
